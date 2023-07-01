@@ -5,24 +5,24 @@
 		const bodyWrapperBlock = document.querySelector('.wrapper');
 		const sliderStripBlock = document.querySelector('.sliderstrip');
 		bodyWrapperBlock.addEventListener('click', moveSliderItems);
-		const setFragments = ['blue', 'green', 'yellow'];
+		const setFragments = ['blue', 'green', 'yellow', 'grey'];
 		const dataItems = ['1a', '2b', '3c', '4d', '5e', '6f', '7g', '8h'];
 		function setupFragments(side, numb) {
 			let fragment = document.createDocumentFragment();
 			if (side === 'left') {
 				for (let i=1; i<=numb; i++) {
 					let item = document.createElement('div');
-					item.append('2b');
+					item.append(dataItems[Math.floor(Math.random() * 8)]);
 					item.setAttribute('class', 'slideritem');
-					item.style.backgroundColor = setFragments[Math.floor(Math.random() * 3)];
+					item.style.backgroundColor = setFragments[Math.floor(Math.random() * 4)];
 					fragment.append(item);
 				};
 			} else if (side === 'right') {
 				for (let i=1; i<=numb; i++) {
 					let item = document.createElement('div');
-					item.append('3c');
+					item.append(dataItems[Math.floor(Math.random() * 8)]);
 					item.setAttribute('class', 'slideritem');
-					item.style.backgroundColor = setFragments[Math.floor(Math.random() * 3)];
+					item.style.backgroundColor = setFragments[Math.floor(Math.random() * 4)];
 					fragment.append(item);
 				};
 			}; 
